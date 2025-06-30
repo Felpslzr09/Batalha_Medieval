@@ -9,7 +9,7 @@ const cards = [
         nome: "Drift",
         ataque: 110,
         defesa: 85,
-        imagem: "img/drift.jpg"
+        imagem: "img/drift 2.webp"
     },
     {
         nome: "Jonesy",
@@ -31,10 +31,9 @@ const cards = [
     }
 ];
 
-// Função para gerar os cards na tela
 function gerarCards() {
     const areaCards = document.getElementById('area-cards');
-    areaCards.innerHTML = ""; // limpa antes de adicionar
+    areaCards.innerHTML = "";
 
     cards.forEach(card => {
         const cardDiv = document.createElement('div');
@@ -51,5 +50,4 @@ function gerarCards() {
     });
 }
 
-// Chama ao carregar
 gerarCards();

@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Batalha Fortnite</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-    <h1>Batalha Fortnite</h1>
-    <P>Arraste sua skin para a arena e veja quem vença!</P>
+    <header class="topo">
+        <img src="img/1720368662fortnite-logo-png-black.png" alt="Logo Fortnite" class="logo" />
+        <div class="titulo">
+            <h1>Batalha Fortnite</h1>
+            <p>Arraste sua skin para a arena e veja quem vence!</p>
+        </div>
     </header>
 
-   <main>
-    <section class="arena">
-        <div id="player1" class="campo">Arena 1</div>
-        <div id="player2" class="campo">Arena 2</div>
-    </section>
+    <main>
+        <section class="arena">
+            <div id="player1" class="campo">Arena 1</div>
+            <div id="player2" class="campo">Arena 2</div>
+        </section>
 
-    <div class="controles">
-        <button id="lutar">Lutar</button>
-        <div id="resultado">Loja de Luta</div>
-        <button id="resetar">Resetar</button>
-    </div>
-
-    <section class="cards">
-        <h2>Escolha sua skin</h2>
-        <div id="area-cards">
-            <!-- Cards aparecerão aqui -->
+        <div class="controles">
+            <button id="lutar">Lutar</button>
+            <div id="resultado">Loja de Luta</div>
+            <button id="resetar">Resetar</button>
         </div>
-    </section>
-</main>
 
+        <section class="cards">
+            <h2>Escolha sua skin</h2>
+            <div id="area-cards"></div>
+        </section>
+    </main>
 
     <script src="script.js"></script>
 </body>
