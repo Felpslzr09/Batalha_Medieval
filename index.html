@@ -1,38 +1,79 @@
 <!DOCTYPE html>
+<!-- Declaração do tipo de documento HTML5 -->
 <html lang="pt-br">
+<!-- Define o idioma da página como português do Brasil -->
+
 <head>
     <meta charset="UTF-8" />
+    <!-- Define o conjunto de caracteres como UTF-8 (suporta acentos, etc.) -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- Garante que a página seja responsiva em dispositivos móveis -->
+
     <title>Batalha Fortnite</title>
+    <!-- Título da aba do navegador -->
+
     <link rel="stylesheet" href="style.css" />
+    <!-- Importa o arquivo CSS externo com o estilo da página -->
 </head>
+
 <body>
+    <!-- Início do corpo do site -->
+
     <header class="topo">
+        <!-- Cabeçalho do site, com logo e título -->
+
         <img src="img/1720368662fortnite-logo-png-black.png" alt="Logo Fortnite" class="logo" />
+        <!-- Logo do Fortnite -->
+
         <div class="titulo">
+            <!-- Container para o título e subtítulo -->
             <h1>Batalha Fortnite</h1>
+            <!-- Título principal da página -->
+
             <p>Arraste sua skin para a arena e veja quem vence!</p>
+            <!-- Subtítulo com instruções para o usuário -->
         </div>
     </header>
 
     <main>
+        <!-- Conteúdo principal da página -->
+
         <section class="arena">
+            <!-- Seção da arena onde ocorrerá a batalha -->
+
             <div id="player1" class="campo">Arena 1</div>
+            <!-- Campo onde o jogador 1 colocará sua skin -->
+
             <div id="player2" class="campo">Arena 2</div>
+            <!-- Campo onde o jogador 2 colocará sua skin -->
         </section>
 
         <div class="controles">
+            <!-- Botões de controle da batalha -->
+
             <button id="lutar">Lutar</button>
+            <!-- Botão para iniciar a luta entre as skins -->
+
             <div id="resultado">Loja de Luta</div>
+            <!-- Local onde será exibido o resultado da batalha -->
+
             <button id="resetar">Resetar</button>
+            <!-- Botão para reiniciar a batalha e escolher novas skins -->
         </div>
 
         <section class="cards">
+            <!-- Seção com as skins disponíveis para escolha -->
+
             <h2>Escolha sua skin</h2>
+            <!-- Título da seção de escolha de skin -->
+
             <div id="area-cards"></div>
+            <!-- Área onde os cards (skins) serão carregados dinamicamente via JavaScript -->
         </section>
     </main>
 
     <script src="script.js"></script>
+    <!-- Importa o script JavaScript com a lógica da batalha -->
 </body>
 </html>
