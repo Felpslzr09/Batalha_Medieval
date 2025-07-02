@@ -1,21 +1,20 @@
-// Dados dos cards
 const cards = [
     {
         nome: "Cavaleiro Negro",
-        ataque: 120,
-        defesa: 80,
+        ataque: 160,
+        defesa: 40,
         imagem: "img/cavaleiro.webp"
     },
     {
         nome: "Drift",
-        ataque: 110,
-        defesa: 85,
+        ataque: 100,
+        defesa: 50,
         imagem: "img/drift 2.webp"
     },
     {
         nome: "Jonesy",
-        ataque: 90,
-        defesa: 100,
+        ataque: 120,
+        defesa: 95,
         imagem: "img/jonesy.jpg"
     },
     {
@@ -26,11 +25,42 @@ const cards = [
     },
     {
         nome: "Skull Trooper",
-        ataque: 100,
-        defesa: 90,
+        ataque: 150,
+        defesa: 20,
         imagem: "img/skull_tropper.jpg"
+    },
+    {
+        nome: "Renegade Raider",
+        ataque: 110,
+        defesa: 90,
+        imagem: "img/renegade.jpg"
+    },
+    {
+        nome: "Midas",
+        ataque: 170,
+        defesa: 30,
+        imagem: "img/midas.jpg"
+    },
+    {
+        nome: "Corvo",
+        ataque: 95,
+        defesa: 105,
+        imagem: "img/corvo.webp"
+    },
+    {
+        nome: "Banana",
+        ataque: 180,
+        defesa: 120,
+        imagem: "img/banana.webp"
+    },
+    {
+        nome: "Marshmello ",
+        ataque: 140,
+        defesa: 60,
+        imagem: "img/marshmello.jpg"
     }
 ];
+
 
 // Gera os cards na área de escolha
 function gerarCards() {
@@ -98,3 +128,31 @@ function setupDropAreas() {
 // Chama ao carregar a página
 gerarCards();
 setupDropAreas();
+function lutar() {
+    const p1 = document.getElementById('player1');
+    const p2 = document.getElementById('player2');
+    const resultado = document.getElementById('resultado');
+
+    // Verifica se os dois campos possuem um card
+    if (!p1.dataset.index || !p2.dataset.index) {
+        resultado.textContent = "Selecione as duas skins para lutar!";
+        return;
+    }
+
+    const card1 = cards[p1.dataset.index];
+    const card2 = cards[p2.dataset.index];
+
+    const poder1 = card1.ataque + card1.defesa;
+    const poder2 = card2.ataque + card2.defesa;
+
+    if (poder1 > poder2) {
+        resultado.textContent = `${card1.nome} venceu a batalha!`;
+    } else if (poder2 > poder1) {
+        resultado.textContent = `${card2.nome} venceu a batalha!`;
+    } else {
+        resultado.textContent = "Empate!";
+    }
+}
+
+// Conecta ao botão "Lutar"
+document.getElementById('lutar').addEventListener('click', lutar);
