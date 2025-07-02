@@ -124,11 +124,14 @@ function setupDropAreas() {
     });
 }
 
-// Função de batalha
 function lutar() {
     const p1 = document.getElementById('player1');
     const p2 = document.getElementById('player2');
     const resultado = document.getElementById('resultado');
+
+    // Limpa efeitos visuais anteriores
+    p1.classList.remove("vencedor");
+    p2.classList.remove("vencedor");
 
     if (!p1.dataset.index || !p2.dataset.index) {
         resultado.textContent = "Selecione as duas skins para lutar!";
@@ -143,12 +146,15 @@ function lutar() {
 
     if (poder1 > poder2) {
         resultado.textContent = `${card1.nome} venceu a batalha!`;
+        p1.classList.add("vencedor");
     } else if (poder2 > poder1) {
         resultado.textContent = `${card2.nome} venceu a batalha!`;
+        p2.classList.add("vencedor");
     } else {
         resultado.textContent = "Empate!";
     }
 }
+
 
 // Função de reset
 function resetar() {

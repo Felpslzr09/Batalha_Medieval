@@ -6,7 +6,7 @@
 }
 
 body {
-    background: #1e1e1e;
+    background: linear-gradient(to right, #0f0f0f, #1e1e1e);
     color: #ffffff;
     display: flex;
     flex-direction: column;
@@ -17,34 +17,36 @@ body {
 
 .topo {
     display: flex;
-    flex-direction: column; /* empilha em telas menores */
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 15px;
     background: #2e2e2e;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 12px;
     width: 100%;
     max-width: 900px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     text-align: center;
+    box-shadow: 0 0 12px #00aeef66;
 }
 
 .logo {
-    width: 220px; /* aumenta levemente para equilíbrio */
+    width: 220px;
     max-width: 80%;
     height: auto;
 }
 
 .titulo h1 {
     color: #00AEEF;
-    font-size: 2em;
+    font-size: 2.3em;
     margin-bottom: 5px;
+    text-shadow: 0 0 5px #00aeefaa;
 }
 
 .titulo p {
     color: #cccccc;
-    font-size: 1em;
+    font-size: 1.1em;
 }
 
 .arena {
@@ -54,12 +56,13 @@ body {
     flex-wrap: wrap;
     gap: 40px;
     width: 100%;
-    max-width: 600px;
+    max-width: 700px;
     padding: 30px 0;
     margin: 0 auto 20px auto;
     background: #2e2e2e;
-    border-radius: 8px;
+    border-radius: 12px;
     text-align: center;
+    box-shadow: 0 0 10px #00aeef33;
 }
 
 .controles {
@@ -79,19 +82,36 @@ body {
 }
 
 .campo {
-    width: 160px;
-    height: 220px;
+    width: 180px;
+    height: 240px;
     background: #1e1e1e;
     border: 2px dashed #00AEEF;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 8px;
+    border-radius: 10px;
     color: #cccccc;
     font-size: 1rem;
-    flex-shrink: 0;
+    transition: background 0.3s;
+    gap: 5px;
+    text-align: center;
 }
 
+.campo img {
+    width: 80px;
+    border-radius: 6px;
+}
+
+.campo h3 {
+    font-size: 1rem;
+    color: #00aaff;
+}
+
+.campo .stats {
+    font-size: 0.9rem;
+    color: #ccc;
+}
 
 #resultado {
     background: #1e1e1e;
@@ -103,13 +123,15 @@ body {
     box-shadow: inset 0 0 8px #00aeef55;
     text-align: center;
     width: 200px;
+    transition: all 0.3s;
 }
+
 button {
     padding: 12px 25px;
     background: linear-gradient(135deg, #00AEEF, #007fbd);
     color: #ffffff;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
     font-size: 1.1em;
@@ -124,16 +146,18 @@ button:hover {
 .cards {
     background: #2e2e2e;
     padding: 40px 30px;
-    border-radius: 8px;
+    border-radius: 10px;
     width: 100%;
     max-width: 1200px;
     margin-bottom: 40px;
+    box-shadow: 0 0 15px #00aeef22;
 }
 
 .cards h2 {
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     color: #00AEEF;
+    font-size: 1.8em;
 }
 
 #area-cards {
@@ -150,13 +174,12 @@ button:hover {
     padding: 15px;
     text-align: center;
     width: 180px;
-    box-sizing: border-box;
-    transition: transform 0.3s;
-    flex-shrink: 0;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card:hover {
     transform: scale(1.05);
+    box-shadow: 0 0 12px #00aaff66;
 }
 
 .card img {
@@ -176,23 +199,19 @@ button:hover {
     color: #ccc;
     font-size: 1rem;
 }
-.campo {
-    display: flex;
-    flex-direction: column; /* empilha verticalmente */
-    justify-content: center;
-    align-items: center;
-    text-align: center; /* centraliza textos */
-    gap: 5px; /* espaçamento entre itens */
+
+/* Efeito de vencedor */
+.vencedor {
+    animation: vibrar 0.4s ease-in-out 3;
+    box-shadow: 0 0 20px 6px #00AEEF;
+    border: 2px solid #00AEEF;
 }
-.campo img {
-    width: 80px; /* tamanho consistente */
-    border-radius: 6px;
-}
-.campo h3 {
-    font-size: 1rem; /* tamanho padrão dentro da arena */
-    color: #00aaff;
-}
-.campo .stats {
-    font-size: 0.9rem;
-    color: #ccc;
+
+@keyframes vibrar {
+    0% { transform: translate(0); }
+    20% { transform: translate(-3px, 2px); }
+    40% { transform: translate(3px, -2px); }
+    60% { transform: translate(-3px, 2px); }
+    80% { transform: translate(3px, -2px); }
+    100% { transform: translate(0); }
 }
