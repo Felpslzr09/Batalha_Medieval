@@ -17,23 +17,23 @@ body {
 
 .topo {
     display: flex;
+    flex-direction: column; /* empilha em telas menores */
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
     background: #2e2e2e;
     padding: 20px;
     border-radius: 10px;
     width: 100%;
     max-width: 900px;
     margin-bottom: 20px;
-    flex-wrap: wrap;
     text-align: center;
-    
 }
 
 .logo {
-    width: 180px;
-   
+    width: 220px; /* aumenta levemente para equilíbrio */
+    max-width: 80%;
+    height: auto;
 }
 
 .titulo h1 {
@@ -175,4 +175,24 @@ button:hover {
 .stats {
     color: #ccc;
     font-size: 1rem;
+}
+.campo {
+    display: flex;
+    flex-direction: column; /* empilha verticalmente */
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* centraliza textos */
+    gap: 5px; /* espaçamento entre itens */
+}
+.campo img {
+    width: 80px; /* tamanho consistente */
+    border-radius: 6px;
+}
+.campo h3 {
+    font-size: 1rem; /* tamanho padrão dentro da arena */
+    color: #00aaff;
+}
+.campo .stats {
+    font-size: 0.9rem;
+    color: #ccc;
 }
