@@ -54,13 +54,12 @@ const cards = [
         imagem: "img/banana.webp"
     },
     {
-        nome: "Marshmello ",
+        nome: "Marshmello",
         ataque: 140,
         defesa: 60,
         imagem: "img/marshmello.jpg"
     }
 ];
-
 
 // Gera os cards na área de escolha
 function gerarCards() {
@@ -125,15 +124,12 @@ function setupDropAreas() {
     });
 }
 
-// Chama ao carregar a página
-gerarCards();
-setupDropAreas();
+// Função de batalha
 function lutar() {
     const p1 = document.getElementById('player1');
     const p2 = document.getElementById('player2');
     const resultado = document.getElementById('resultado');
 
-    // Verifica se os dois campos possuem um card
     if (!p1.dataset.index || !p2.dataset.index) {
         resultado.textContent = "Selecione as duas skins para lutar!";
         return;
@@ -154,5 +150,25 @@ function lutar() {
     }
 }
 
-// Conecta ao botão "Lutar"
+// Função de reset
+function resetar() {
+    const p1 = document.getElementById('player1');
+    const p2 = document.getElementById('player2');
+    const resultado = document.getElementById('resultado');
+
+    p1.innerHTML = "Arena 1";
+    p2.innerHTML = "Arena 2";
+
+    delete p1.dataset.index;
+    delete p2.dataset.index;
+
+    resultado.textContent = "Loja de Luta";
+}
+
+// Inicialização
+gerarCards();
+setupDropAreas();
+
+// Eventos dos botões
 document.getElementById('lutar').addEventListener('click', lutar);
+document.getElementById('resetar').addEventListener('click', resetar);
