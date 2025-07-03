@@ -8,13 +8,16 @@
 
 /* Estilização do corpo da página */
 body {
-    background: linear-gradient(to right, #0f0f0f, #1e1e1e); /* Degradê escuro de fundo */
     color: #ffffff; /* Cor padrão do texto */
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
     min-height: 100vh; /* Garante que o corpo ocupe pelo menos 100% da altura da tela */
+    background-image: url('img/fundo2.jpg'); /* caminho relativo */
+    background-size: cover; /* cobre toda a tela */
+    background-position: center; /* centraliza */
+    background-repeat: no-repeat; /* sem repetição */
 }
 
 /* Cabeçalho da página */
@@ -31,7 +34,7 @@ body {
     max-width: 900px;
     margin-bottom: 30px;
     text-align: center;
-    box-shadow: 0 0 12px #00aeef66; /* Sombra azul clara */
+    
 }
 
 /* Logo do Fortnite */
@@ -43,10 +46,10 @@ body {
 
 /* Título principal */
 .titulo h1 {
-    color: #00AEEF;
+    color: #0578a2;
     font-size: 2.3em;
     margin-bottom: 5px;
-    text-shadow: 0 0 5px #00aeefaa;
+    
 }
 
 /* Subtítulo */
@@ -61,7 +64,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
-    gap: 40px;
+    gap: 20px;
     width: 100%;
     max-width: 700px;
     padding: 30px 0;
@@ -69,7 +72,7 @@ body {
     background: #2e2e2e;
     border-radius: 12px;
     text-align: center;
-    box-shadow: 0 0 10px #00aeef33;
+    
 }
 
 /* Área dos controles (botões e resultado) */
@@ -82,7 +85,6 @@ body {
     background: #2e2e2e;
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 0 15px #00aeef33;
     width: 100%;
     max-width: 400px;
     margin: 0 auto 40px auto;
@@ -94,13 +96,13 @@ body {
     width: 180px;
     height: 240px;
     background: #1e1e1e;
-    border: 2px dashed #00AEEF;
+    border: 2px dashed #0181b0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    color: #cccccc;
+    color: #4d4b4b;
     font-size: 1rem;
     transition: background 0.3s;
     gap: 5px;
@@ -142,7 +144,7 @@ body {
 /* Estilização dos botões */
 button {
     padding: 12px 25px;
-    background: linear-gradient(135deg, #00AEEF, #007fbd); /* Degradê azul */
+    background: linear-gradient(135deg, #01698f, #0171a9); /* Degradê azul */
     color: #ffffff;
     border: none;
     border-radius: 8px;
@@ -155,7 +157,7 @@ button {
 /* Efeito ao passar o mouse nos botões */
 button:hover {
     transform: scale(1.05); /* Aumenta ligeiramente */
-    box-shadow: 0 4px 10px #00AEEF55;
+    box-shadow: 0 4px 10px #001f2a55;
 }
 
 /* Seção com os cards das skins disponíveis */
@@ -166,14 +168,14 @@ button:hover {
     width: 100%;
     max-width: 1200px;
     margin-bottom: 40px;
-    box-shadow: 0 0 15px #00aeef22;
+    
 }
 
 /* Título da seção de cards */
 .cards h2 {
     text-align: center;
     margin-bottom: 20px;
-    color: #00AEEF;
+    color: #047eab;
     font-size: 1.8em;
 }
 
@@ -188,7 +190,7 @@ button:hover {
 /* Estilo visual de cada card */
 .card {
     background-color: #1e1e1e;
-    border: 2px solid #00aaff;
+    border: 2px solid #035a85;
     border-radius: 10px;
     padding: 15px;
     text-align: center;
@@ -199,7 +201,7 @@ button:hover {
 /* Efeito ao passar o mouse no card */
 .card:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 12px #00aaff66;
+    box-shadow: 0 0 12px #01324a66;
 }
 
 /* Imagem da skin dentro do card */
@@ -226,8 +228,8 @@ button:hover {
 /* Classe aplicada ao vencedor da luta */
 .vencedor {
     animation: vibrar 0.4s ease-in-out 3; /* Efeito de vibração */
-    box-shadow: 0 0 20px 6px #00AEEF; /* Destaque em azul */
-    border: 2px solid #00AEEF;
+    box-shadow: 0 0 20px 6px #013f55; /* Destaque em azul */
+    border: 2px solid #0298ce;
 }
 
 /* Animação de vibração */
