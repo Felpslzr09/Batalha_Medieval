@@ -1,249 +1,246 @@
-/* Reset básico e estilo global */
+/* Reset global */
 * {
-    box-sizing: border-box; /* Faz com que padding e border não aumentem o tamanho do elemento */
-    margin: 0; /* Remove margens padrão */
-    padding: 0; /* Remove espaçamentos padrão */
-    font-family: 'Segoe UI', sans-serif; /* Fonte padrão para o site */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
 }
 
-/* Estilização do corpo da página */
+/* Corpo com fundo Fortnite e centralizado */
 body {
-    color: #ffffff; /* Cor padrão do texto */
+    background-image: url('img/fundo2.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    min-height: 100vh; /* Garante que o corpo ocupe pelo menos 100% da altura da tela */
-    background-image: url('img/fundo2.jpg'); /* caminho relativo */
-    background-size: cover; /* cobre toda a tela */
-    background-position: center; /* centraliza */    
+    min-height: 100vh;
 }
 
-/* Cabeçalho da página */
+/* Topo com título e descrição */
 .topo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    background: #2e2e2e;
+    background: rgba(20, 20, 40, 0.9);
+    color: #ffffff;
+    text-align: center;
     padding: 20px;
+    border: 2px solid #00aeef;
     border-radius: 12px;
     width: 100%;
-    max-width: 900px;
+    max-width: 1000px;
     margin-bottom: 30px;
-    text-align: center;
-    
 }
 
-/* Logo do Fortnite */
-.logo {
-    width: 220px;
-    max-width: 80%;
-    height: auto;
+/* Título principal do topo */
+.topo h1 {
+    font-size: 2.5em;
+    color: #00aeef;
+    text-shadow: 1px 1px 5px #000;
 }
 
-/* Título principal */
-.titulo h1 {
-    color: #0578a2;
-    font-size: 2.3em;
-    margin-bottom: 5px;
-    
+/* Subtítulo do topo */
+.topo p {
+    font-size: 1.2em;
+    color: #c0c0c0;
 }
 
-/* Subtítulo */
-.titulo p {
-    color: #cccccc;
-    font-size: 1.1em;
-}
-
-/* Seção da arena */
-.arena {
+/* Área geral das arenas (layout com 3 blocos) */
+.arena-geral {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
+    flex-wrap: wrap;
     gap: 20px;
     width: 100%;
-    max-width: 700px;
-    padding: 30px 0;
-    margin: 0 auto 20px auto;
-    background: #2e2e2e;
-    border-radius: 12px;
-    text-align: center;
-    
+    max-width: 1200px;
+    margin-bottom: 40px;
 }
 
-/* Área dos controles (botões e resultado) */
-.controles {
+/* Arena individual de cada jogador */
+.arena-individual {
     display: flex;
-    flex-direction: column; /* Deixa o resultado em cima e botões embaixo */
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 15px;
-    background: #2e2e2e;
-    padding: 30px;
-    border-radius: 12px;
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto 40px auto;
-    text-align: center;
-}
-.botoes-controle {
-    display: flex;
-    gap: 15px;
+    gap: 10px;
+    flex: 1;
 }
 
-/* Campo onde as skins são colocadas (Arena 1 e Arena 2) */
+/* Título da arena de cada jogador */
+.arena-individual h2 {
+    color: #00aeef;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+/* Campo onde o jogador solta a skin */
 .campo {
-    width: 180px;
-    height: 240px;
-    background: #1e1e1e;
-    border: 2px dashed #0181b0;
+    width: 200px;
+    height: 280px;
+    background: rgba(10, 10, 30, 0.85);
+    border: 2px dashed #024a64;
+    border-radius: 10px;
     display: flex;
-    flex-direction: column; /* IMPORTANTE para alinhar em coluna */
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
-    color: #4d4b4b;
-    font-size: 1rem;
-    transition: background 0.3s;
-    gap: 5px;
     text-align: center;
-    overflow: hidden; /* evita estouro da imagem */
+    padding: 10px;
+    color: #c0c0c0;
+    gap: 5px;
+    transition: transform 0.3s;
 }
 
+/* Efeito ao passar o mouse sobre o campo */
+.campo:hover {
+    transform: scale(1.05);
+    background: rgba(30, 30, 60, 0.9);
+}
 
-/* Imagem dentro da arena */
+/* Imagem da skin dentro da arena */
 .campo img {
-    width: 80px;
+    width: 90px;
     border-radius: 6px;
+    border: 1px solid #00aeef;
 }
 
 /* Nome da skin dentro da arena */
 .campo h3 {
-    font-size: 1rem;
-    color: #00aaff;
+    color: #02465f;
+    font-size: 1.1em;
 }
 
-/* Estatísticas (ataque e defesa) dentro da arena */
+/* Estatísticas dentro da arena */
 .campo .stats {
     font-size: 0.9rem;
-    color: #ccc;
+    color: #c0c0c0;
 }
 
-/* Área que mostra o resultado da luta */
-#resultado {
-    background: #1e1e1e;
-    padding: 12px 20px;
-    border-radius: 8px;
-    color: #ffffff;
-    font-size: 1.1em;
-    border: 1px solid #00AEEF;
-    box-shadow: inset 0 0 8px #00aeef55;
+/* Área central com o resultado e botões */
+.status-central {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background: rgba(10, 10, 30, 0.9);
+    padding: 20px;
+    border-radius: 12px;
+    border: 2px solid #013a4f;
+    min-width: 250px;
+}
+
+/* Texto de resultado */
+.status-central #resultado {
+    font-size: 1.2em;
+    color: #00516f;
+    margin-bottom: 10px;
     text-align: center;
-    width: 200px;
-    transition: all 0.3s;
 }
 
-/* Estilização dos botões */
-button {
-    padding: 12px 25px;
-    background: linear-gradient(135deg, #01698f, #0171a9); /* Degradê azul */
-    color: #ffffff;
+/* Container dos botões */
+.botoes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+/* Botões de lutar e resetar */
+#lutar, #resetar {
+    padding: 10px;
+    background: linear-gradient(135deg, #025674, #013f5f);
+    color: #fff;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
-    font-size: 1.1em;
-    transition: transform 0.2s;
-    flex-direction: row;
+    font-size: 1em;
+    transition: transform 0.2s, box-shadow 0.2s;
+    width: 100%;
 }
 
-/* Efeito ao passar o mouse nos botões */
-button:hover {
-    transform: scale(1.05); /* Aumenta ligeiramente */
-    box-shadow: 0 4px 10px #001f2a55;
+/* Efeito hover nos botões */
+#lutar:hover, #resetar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #00aeef55;
 }
 
-/* Seção com os cards das skins disponíveis */
+/* Seção de cards de escolha */
 .cards {
-    background: #2e2e2e;
-    padding: 40px 30px;
+    background: rgba(8, 8, 15, 0.9);
+    padding: 30px 20px;
     border-radius: 10px;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1100px;
+    border: 2px solid #014b66;
     margin-bottom: 40px;
-    
-}
-
-/* Título da seção de cards */
-.cards h2 {
     text-align: center;
-    margin-bottom: 20px;
-    color: #047eab;
-    font-size: 1.8em;
 }
 
-/* Área que contém os cards */
+/* Título da seção de skins */
+.cards h2 {
+    color: #037198;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px #000;
+}
+
+/* Área onde os cards aparecem */
 #area-cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 30px;
+    gap: 20px;
 }
 
-/* Estilo visual de cada card */
+/* Card individual */
 .card {
-    background-color: #1e1e1e;
-    border: 2px solid #035a85;
+    background-color: rgba(10, 10, 30, 0.9);
+    border: 2px solid #01374a;
     border-radius: 10px;
-    padding: 15px;
+    padding: 10px;
     text-align: center;
-    width: 180px;
+    width: 160px;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 /* Efeito ao passar o mouse no card */
 .card:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 12px #01324a66;
+    box-shadow: 0 0 12px #00aeef55;
 }
 
-/* Imagem da skin dentro do card */
+/* Imagem das skins nos cards */
 .card img {
     width: 100%;
     height: auto;
     border-radius: 6px;
+    border: 1px solid #00aeef;
     margin-bottom: 8px;
 }
 
-/* Nome da skin no card */
+/* Nome da skin nos cards */
 .card h3 {
-    color: #00aaff;
-    margin: 5px 0;
-    font-size: 1.2rem;
-}
-
-/* Estilo das estatísticas no card */
-.stats {
-    color: #ccc;
+    color: #025e80;
     font-size: 1rem;
+    margin: 5px 0;
 }
 
-/* Classe aplicada ao vencedor da luta */
+/* Estatísticas dos cards */
+.stats {
+    color: #c0c0c0;
+    font-size: 0.9rem;
+}
+
+/* Destaque para o vencedor com brilho */
 .vencedor {
-    animation: vibrar 0.4s ease-in-out 3; /* Efeito de vibração */
-    box-shadow: 0 0 20px 6px #013f55; /* Destaque em azul */
-    border: 2px solid #0298ce;
+    animation: brilhoFortnite 1s ease-in-out infinite alternate;
+    box-shadow: 0 0 15px 5px #059fd7aa;
+    border: 2px solid #008ec1;
 }
 
-/* Animação de vibração */
-@keyframes vibrar {
-    0% { transform: translate(0); }
-    20% { transform: translate(-3px, 2px); }
-    40% { transform: translate(3px, -2px); }
-    60% { transform: translate(-3px, 2px); }
-    80% { transform: translate(3px, -2px); }
-    100% { transform: translate(0); }
+/* Animação de brilho Fortnite */
+@keyframes brilhoFortnite {
+    0% { box-shadow: 0 0 10px #00aeef55; }
+    100% { box-shadow: 0 0 20px #012736aa; }
 }
