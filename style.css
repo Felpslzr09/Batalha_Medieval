@@ -1,246 +1,255 @@
-/* Reset global */
+/* Reset e fonte medieval */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Georgia', serif;
 }
 
-/* Corpo com fundo Fortnite e centralizado */
+/* Fundo do jogo */
 body {
-    background-image: url('img/fundo2.jpg');
+    background-image: url("img/fundo2.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
     background-size: cover;
-    background-position: center;
-    color: #ffffff;
+    background-attachment: fixed;
+    background-color: #1a0e05;
+    color: #f5deb3;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    min-height: 100vh;
 }
 
-/* Topo com título e descrição */
+/* TOPO */
 .topo {
-    background: rgba(20, 20, 40, 0.9);
-    color: #ffffff;
+    background: #4e1e00;
+    border-bottom: 3px solid #ffcc66;
+    color: #ffcc66;
     text-align: center;
-    padding: 20px;
-    border: 2px solid #00aeef;
-    border-radius: 12px;
+    padding: 15px;
     width: 100%;
-    max-width: 1000px;
-    margin-bottom: 30px;
+    max-width: 900px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px #000;
+    margin-bottom: 20px;
 }
 
-/* Título principal do topo */
 .topo h1 {
-    font-size: 2.5em;
-    color: #00aeef;
-    text-shadow: 1px 1px 5px #000;
+    font-size: 2em;
 }
 
-/* Subtítulo do topo */
 .topo p {
-    font-size: 1.2em;
-    color: #c0c0c0;
+    font-size: 1em;
+    color: #f5deb3;
 }
 
-/* Área geral das arenas (layout com 3 blocos) */
+/* Layout geral das arenas */
 .arena-geral {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-around;
     flex-wrap: wrap;
-    gap: 20px;
     width: 100%;
-    max-width: 1200px;
-    margin-bottom: 40px;
+    max-width: 1100px;
+    margin-bottom: 30px;
+    gap: 15px;
 }
 
-/* Arena individual de cada jogador */
 .arena-individual {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-    flex: 1;
 }
 
-/* Título da arena de cada jogador */
 .arena-individual h2 {
-    color: #00aeef;
-    font-size: 1.2em;
-    margin-bottom: 10px;
+    color: #ffcc66;
+    font-size: 1em;
+    margin-bottom: 5px;
 }
 
-/* Campo onde o jogador solta a skin */
 .campo {
-    width: 200px;
-    height: 280px;
-    background: rgba(10, 10, 30, 0.85);
-    border: 2px dashed #024a64;
-    border-radius: 10px;
+    width: 180px;
+    height: 250px;
+    background: #2d1200;
+    border: 2px dashed #ffcc66;
+    border-radius: 8px;
+    color: #ffcc66;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 10px;
-    color: #c0c0c0;
-    gap: 5px;
-    transition: transform 0.3s;
+    padding: 5px;
+    transition: all 0.3s ease-in-out;
 }
 
-/* Efeito ao passar o mouse sobre o campo */
-.campo:hover {
-    transform: scale(1.05);
-    background: rgba(30, 30, 60, 0.9);
-}
-
-/* Imagem da skin dentro da arena */
 .campo img {
     width: 90px;
     border-radius: 6px;
-    border: 1px solid #00aeef;
+    margin-bottom: 5px;
+    
 }
 
-/* Nome da skin dentro da arena */
-.campo h3 {
-    color: #02465f;
-    font-size: 1.1em;
-}
-
-/* Estatísticas dentro da arena */
-.campo .stats {
-    font-size: 0.9rem;
-    color: #c0c0c0;
-}
-
-/* Área central com o resultado e botões */
+/* Resultado e botões */
 .status-central {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    background: rgba(10, 10, 30, 0.9);
-    padding: 20px;
-    border-radius: 12px;
-    border: 2px solid #013a4f;
-    min-width: 250px;
-}
-
-/* Texto de resultado */
-.status-central #resultado {
-    font-size: 1.2em;
-    color: #00516f;
-    margin-bottom: 10px;
+    background: #3b1700;
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid #ffcc66;
     text-align: center;
-}
-
-/* Container dos botões */
-.botoes {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Botões de lutar e resetar */
-#lutar, #resetar {
-    padding: 10px;
-    background: linear-gradient(135deg, #025674, #013f5f);
-    color: #fff;
+.status-central #resultado {
+    font-size: 1em;
+    color: #ffcc66;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+button {
+    padding: 10px 20px;
+    background: #663300;
+    color: #ffcc66;
     border: none;
-    border-radius: 8px;
+    border-radius: 6px;
     cursor: pointer;
     font-weight: bold;
-    font-size: 1em;
-    transition: transform 0.2s, box-shadow 0.2s;
-    width: 100%;
+    transition: background 0.3s;
 }
 
-/* Efeito hover nos botões */
-#lutar:hover, #resetar:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 10px #00aeef55;
+button:hover {
+    background: #4d2600;
 }
 
-/* Seção de cards de escolha */
+/* Cards das skins */
 .cards {
-    background: rgba(8, 8, 15, 0.9);
-    padding: 30px 20px;
+    background: #4e1e00;
+    padding: 20px;
     border-radius: 10px;
     width: 100%;
-    max-width: 1100px;
-    border: 2px solid #014b66;
-    margin-bottom: 40px;
+    max-width: 1000px;
     text-align: center;
+    border: 2px solid #ffcc66;
 }
 
-/* Título da seção de skins */
 .cards h2 {
-    color: #037198;
-    font-size: 1.8em;
-    margin-bottom: 20px;
-    text-shadow: 1px 1px 3px #000;
+    color: #ffcc66;
+    font-size: 1.5em;
+    margin-bottom: 15px;
 }
 
-/* Área onde os cards aparecem */
 #area-cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
 }
 
-/* Card individual */
+/* Card base com borda de raridade */
 .card {
-    background-color: rgba(10, 10, 30, 0.9);
-    border: 2px solid #01374a;
-    border-radius: 10px;
-    padding: 10px;
+    background: #331400;
+    border-radius: 8px;
+    width: 140px;
+    height: 200px;
     text-align: center;
-    width: 160px;
-    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: grab;
+    position: relative;
+    perspective: 1000px; /* efeito 3D */
+    /* Removido box-shadow glow para ficar limpo */
 }
 
-/* Efeito ao passar o mouse no card */
-.card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 12px #00aeef55;
-}
-
-/* Imagem das skins nos cards */
-.card img {
+/* Container do flip */
+.card-inner {
+    position: relative;
     width: 100%;
-    height: auto;
-    border-radius: 6px;
-    border: 1px solid #00aeef;
-    margin-bottom: 8px;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
 }
 
-/* Nome da skin nos cards */
+/* Ao passar o mouse, gira o card */
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Front e back do card */
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background: #331400;
+    border-radius: 8px;
+    padding: 10px;
+    box-sizing: border-box;
+    color: #ffcc66;
+    /* Removido borda fixa */
+}
+
+/* Frente com imagem e stats */
+.card-front {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Verso do card */
+.card-back {
+    transform: rotateY(180deg);
+    font-size: 0.75em;
+    color: #fff;
+    background-color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 8px;
+}
+
+/* Nome e stats */
 .card h3 {
-    color: #025e80;
-    font-size: 1rem;
-    margin: 5px 0;
+    font-size: 0.9em;
+    color: #ffcc66;
 }
 
-/* Estatísticas dos cards */
 .stats {
-    color: #c0c0c0;
-    font-size: 0.9rem;
+    font-size: 0.8em;
+    color: #f5deb3;
 }
 
-/* Destaque para o vencedor com brilho */
+/* Destaque do vencedor */
 .vencedor {
-    animation: brilhoFortnite 1s ease-in-out infinite alternate;
-    box-shadow: 0 0 15px 5px #059fd7aa;
-    border: 2px solid #008ec1;
+    box-shadow: 0 0 15px 5px #ffd700;
+    border: 3px solid #ffd700;
 }
 
-/* Animação de brilho Fortnite */
-@keyframes brilhoFortnite {
-    0% { box-shadow: 0 0 10px #00aeef55; }
-    100% { box-shadow: 0 0 20px #012736aa; }
+/* Tooltip (ainda usado se quiser em vez da virada) */
+.tooltip {
+    visibility: hidden;
+    background-color: #111;
+    color: #fff;
+    text-align: left;
+    border-radius: 6px;
+    padding: 8px;
+    position: absolute;
+    z-index: 1;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    font-size: 0.75em;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    box-shadow: 0 0 10px #000;
+}
+
+.card:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
 }
